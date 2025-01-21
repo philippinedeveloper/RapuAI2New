@@ -23,6 +23,7 @@ import android.graphics.Paint;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.BitmapDrawable;
+import android.widget.ImageView;
 import com.google.appinventor.components.annotations.*;
 import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.runtime.*;
