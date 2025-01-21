@@ -49,7 +49,7 @@ import gnu.mapping.LocationEnumeration;
     description = "",
     iconName = "")
 @SimpleObject(external = true)
-@UsesPermissions(permissionName = "")
+@UsesPermissions(permissionNames = "")
 @UsesLibraries(libraries = "")
     
 public class Rapu extends AndroidNonvisibleComponent {
