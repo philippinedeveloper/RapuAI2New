@@ -20,6 +20,7 @@ import android.view.MotionEvent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import com.google.appinventor.components.annotations.*;
 import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.runtime.*;
@@ -674,21 +675,33 @@ public void Drop(AndroidViewComponent component, int x, int y) {
 
     @SimpleFunction(description = "Converts component to image")
     public void ConvertComponentToImage(AndroidViewComponent component, AndroidViewComponent image){
-      if(image instanceof Image){
-        Image.Picture(MediaUtil.getBitmapDrawable(form, getBitmapFromView(component.getView()).getBitmap()));
+       if (image instanceof Image) {
+         // Convert the component view to a Bitmap
+         Bitmap bitmap = getBitmapFromView(component.getView());
+        
+         // Create a drawable from the bitmap and set it to the ImageView
+         ((Image) image).Picture(MediaUtil.getBitmapDrawable(form, bitmap));
       }
-    }
-  
-     public static Bitmap getBitmapFromView(View view) {
-        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(returnedBitmap);
-        Drawable bgDrawable =view.getBackground();
-        if (bgDrawable!=null) 
-            bgDrawable.draw(canvas);
-        else {
-          canvas.drawColor(Color.WHITE);
-          view.draw(canvas);
-          return returnedBitmap;
-       }
-    }
+  }
+
+   public static Bitmap getBitmapFromView(View view) {
+     // Create a Bitmap with the size of the view
+     Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+    
+     // Create a canvas to draw the view into the Bitmap
+     Canvas canvas = new Canvas(returnedBitmap);
+    
+     // Draw the background or the content of the view
+     Drawable bgDrawable = view.getBackground();
+     if (bgDrawable != null) {
+        bgDrawable.draw(canvas);
+     } else {
+        canvas.drawColor(Color.WHITE); // Fill the background with white if there's no background
+     }
+    
+     // Draw the view's content
+     view.draw(canvas);
+    
+     return returnedBitmap; // Return the generated bitmap
+  }
 }
