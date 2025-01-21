@@ -17,6 +17,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.MotionEvent;
+import android.graphics.Bitmap;
 import com.google.appinventor.components.annotations.*;
 import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.runtime.*;
