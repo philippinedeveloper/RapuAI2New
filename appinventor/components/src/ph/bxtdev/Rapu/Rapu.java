@@ -24,11 +24,11 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.widget.ImageView;
-import com.google.appinventor.components.annotations.*;
-import com.google.appinventor.components.common.ComponentCategory;
-import com.google.appinventor.components.runtime.*;
-import com.google.appinventor.components.runtime.util.*;
-import com.google.appinventor.components.runtime.errors.*;
+import com.google.appinventor.components.annotations.DesignerComponent;
+import com.google.appinventor.components.annotations.UsesPermissions;
+import com.google.appinventor.components.annotations.UsesLibraries;
+import com.google.appinventor.components.runtime.ComponentCategory;
+import com.google.appinventor.components.annotations.SimpleObject;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -40,9 +40,8 @@ import gnu.mapping.SimpleSymbol;
 import gnu.mapping.Environment;
 import gnu.mapping.Location;
 import gnu.mapping.LocationEnumeration;
-import com.google.appinventor.components.runtime.Component;
 
-@DesignerProperty(
+@DesignerComponent(
     versionName = "4.1",
     version = 21,
     category = ComponentCategory.EXTENSION,
