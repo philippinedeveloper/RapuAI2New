@@ -35,6 +35,17 @@ import gnu.mapping.Location;
 import gnu.mapping.LocationEnumeration;
 import com.google.appinventor.components.runtime.Component;
 
+@DesignerProperty(
+    versionName = "4.1",
+    version = 21,
+    category = ComponentCategory.EXTENSION,
+    nonVisible = true,
+    description = "",
+    iconName = "")
+@SimpleObject(external = true)
+@UsesPermissions(permissionName = "")
+@UsesLibraries(libraries = "")
+    
 public class Rapu extends AndroidNonvisibleComponent {
 
     private Context context;
