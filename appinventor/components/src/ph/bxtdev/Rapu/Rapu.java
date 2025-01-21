@@ -22,6 +22,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import com.google.appinventor.components.annotations.*;
 import com.google.appinventor.components.common.ComponentCategory;
 import com.google.appinventor.components.runtime.*;
@@ -676,12 +677,11 @@ public void Drop(AndroidViewComponent component, int x, int y) {
 
     @SimpleFunction(description = "Converts component to image")
     public void ConvertComponentToImage(AndroidViewComponent component, AndroidViewComponent image){
-       if (image instanceof Image) {
+       if (image.getView() instanceof ImageView) {
          // Convert the component view to a Bitmap
          Bitmap bitmap = getBitmapFromView(component.getView());
-        
-         // Create a drawable from the bitmap and set it to the ImageView
-         ((Image) image).Picture(MediaUtil.getBitmapDrawable(form, bitmap));
+         ImageView iV = (ImageView) image.getView();
+         iV.setImageBitmap(bitmap);
       }
   }
 
