@@ -46,8 +46,8 @@ import gnu.mapping.LocationEnumeration;
     version = 21,
     category = ComponentCategory.EXTENSION,
     nonVisible = true,
-    description = "",
-    iconName = "")
+    description = "The <a href="https://community.kodular.io/t/f-os-dynamic-components-extension-for-every-component-2-3-0/50789">DynamicComponents</a> extension with view manipulation tools, retrieving parent/children, listing components, listeners (Click & LongClick, Focus, Touch & DragAndDrop), Copy components, Converting component to image.",
+    iconName = "aiwebres/icon.png")
 @SimpleObject(external = true)
 @UsesPermissions(permissionNames = "")
 @UsesLibraries(libraries = "")
