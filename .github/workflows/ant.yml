@@ -34,5 +34,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: aix-artifacts
-        path: "appinventor/components/build/extensions/*.aix"
+        path: "appinventor/components/aix/*.aix"
         if-no-files-found: warn
