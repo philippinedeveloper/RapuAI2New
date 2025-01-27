@@ -26,7 +26,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y ant
 
     - name: Build with Ant
-      run: ant -buildfile appinventor/build.xml extensions -Dproguard=1
+      run: ant -buildfile appinventor/components/build.xml extensions -Dproguard=1
       env:
         JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.25-9/x64
 
