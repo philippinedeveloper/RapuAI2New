@@ -75,7 +75,7 @@ public class Rapu extends AndroidNonvisibleComponent {
             Drawable drawable = com.google.appinventor.components.util.MediaUtil.getBitmapDrawable(form, image);
             Bitmap bitmap = (BitmapDrawable) drawable.getBitmap();
             ImageView imageView = (ImageView) component;
-            imageView.setImageBitmap(bitmap);\
+            imageView.setImageBitmap(bitmap);
         }
     }
 
