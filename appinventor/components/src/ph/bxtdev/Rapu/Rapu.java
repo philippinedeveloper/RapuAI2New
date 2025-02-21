@@ -70,6 +70,26 @@ public class Rapu extends AndroidNonvisibleComponent {
     }
 
     @SimpleFunction
+    public void SetImage(AndroidViewComponent component, @Asset String image) throws Exception{
+        if(component instanceof android.widget.ImageView){
+            Drawable drawable = com.google.appinventor.components.util.MediaUtil.getBitmapDrawable(form, image);
+            Bitmap bitmap = (BitmapDrawable) drawable.getBitmap();
+            ImageView imageView = (ImageView) component;
+            imageView.setImageBitmap(bitmap);\
+        }
+    }
+
+    @SimpleFunction
+    public String ScreenName(){
+        return form.getClass().getSimpleName();
+    }
+
+     @SimpleFunction
+    public boolean DispatchEvent(String event, String args){
+        return EventDispatcher.dispatchEvent(this, event, args);
+    }
+
+    @SimpleFunction
 public void BackgroundColor(AndroidViewComponent component, int backgroundColor) {
     component.getView().setBackgroundColor(backgroundColor);
 }
