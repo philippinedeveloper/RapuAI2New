@@ -89,10 +89,12 @@ public class Rapu extends AndroidNonvisibleComponent {
     }
 
      @SimpleFunction
-    public boolean DispatchEvent(String event, String args){
-        return EventDispatcher.dispatchEvent(this, event, args);
-    }
+public String DispatchEvent(String event, String args) {
+    boolean isDispatched = EventDispatcher.dispatchEvent(this, event, args);
+    return isDispatched + "     and Event's name     " + event + "     and arguments     " + args;
+}
 
+    
     @SimpleFunction
 public void BackgroundColor(AndroidViewComponent component, int backgroundColor) {
     component.getView().setBackgroundColor(backgroundColor);
